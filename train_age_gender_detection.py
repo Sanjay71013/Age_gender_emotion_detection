@@ -1,6 +1,5 @@
-# https://youtu.be/rdjWDAYt98s
 """
-Train deep learning models to predict age and gender.
+Deep Learning Model to predict age and gender.
 
 Datase from here: https://susanqq.github.io/UTKFace/
 """
@@ -28,7 +27,7 @@ for img in os.listdir(path):
   gender.append(np.array(genders))
   
 age = np.array(age,dtype=np.int64)
-images = np.array(images)   #Forgot to scale image for my training. Please divide by 255 to scale. 
+images = np.array(images) /255
 gender = np.array(gender,np.uint64)
 
 x_train_age, x_test_age, y_train_age, y_test_age = train_test_split(images, age, random_state=42)
